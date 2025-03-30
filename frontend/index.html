@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indic Duolingo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="background-char" aria-hidden="true">क</div>
+        
+        <!-- Dark Mode Toggle Switch (positioned absolutely) -->
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-checkbox">
+                <input type="checkbox" id="theme-checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+
+        <div class="title-wrapper">
+            <span class="flag-icon">🇮🇳</span>
+            <h1>Indic Duolingo</h1>
+            <span class="flag-icon">🇮🇳</span>
+        </div>
+        <p class="subtitle">A Language Learning Application powered by MistralAI and SarvamAI</p>
+
+        <div class="settings-panel">
+             <div class="settings">
+                <label for="language-select">Language:</label>
+                <select id="language-select" required>
+                    <option value="" selected disabled>-- Select Language --</option>
+                    <option value="te">Telugu (తెలుగు)</option>
+                    <option value="hi">Hindi (हिन्दी)</option>
+                    <option value="ta">Tamil (தமிழ்)</option>
+                    <option value="kn">Kannada (ಕನ್ನಡ)</option>
+                    <option value="ml">Malayalam (മലയാളം)</option>
+                    <option value="mr">Marathi (मराठी)</option>
+                    <option value="bn">Bengali (বাংলা)</option>
+                    <option value="gu">Gujarati (ગુજરાતી)</option>
+                    <option value="pa">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="od">Odia (ଓଡ଼ିଆ)</option>
+                </select>
+
+                <label for="scenario-select">Scenario:</label>
+                <select id="scenario-select" required>
+                    <option value="" selected disabled>-- Select Scenario --</option>
+                    <option value="general">General Conversation</option>
+                    <option value="restaurant">Restaurant Order</option>
+                    <option value="medical">Pharmacy Visit</option>
+                    <option value="hotel">Hotel Check-in</option>
+                    <option value="support">Customer Support</option>
+                </select>
+            </div>
+            <div class="start-button-wrapper">
+                <button id="start-button">Start Conversation</button>
+                <button id="quick-demo-button" class="secondary-button">Quick Demo</button>
+            </div>
+        </div>
+
+        <div id="chatbox">
+             <div class="response-block system-message">
+                 <p>Select language & scenario, or try the Quick Demo.</p>
+             </div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Type your message..." disabled>
+            <button id="send-button" disabled>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Templates for cloning (Hidden) -->
+    <div style="display: none;">
+         <div class="ai-response-template">
+             <div class="response-block ai-response">
+                 <div class="message-section">
+                     <strong>AI Response:</strong>
+                     <p class="original-en-text">...</p>
+                 </div>
+                  <div class="message-section">
+                     <strong>Translation:</strong>
+                     <p class="translation-text">...</p>
+                 </div>
+                 <div class="message-section">
+                     <strong>Transliteration:</strong>
+                     <p class="transliteration-text">...</p>
+                 </div>
+                  <div class="message-section audio-section">
+                     <strong>Audio:</strong>
+                     <audio controls class="audio-player" src=""></audio>
+                     <p class="audio-error" style="display: none; color: red; font-size: 0.9em;"></p>
+                 </div>
+             </div>
+         </div>
+ 
+         <div class="user-message-template">
+             <div class="response-block user-message">
+                  <strong>You:</strong>
+                  <p class="user-message-text">...</p>
+             </div>
+         </div>
+     </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
