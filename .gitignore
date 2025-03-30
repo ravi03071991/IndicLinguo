@@ -1,0 +1,26 @@
+# Environment variables
+backend/.env
+
+# Python cache/compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment folder (replace venv with your folder name if different)
+venv/
+*.venv/
+env/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Python
+*.egg-info/
+dist/
+build/
+
+# Generated media
+frontend/audio/*.wav
+frontend/audio/*.mp3 
