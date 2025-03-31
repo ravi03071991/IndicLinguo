@@ -60,10 +60,10 @@ Meet Linguo — your buddy for learning Indian languages through conversational 
         flask run
         ```
         *Alternatively, you can run `python app.py`.*
-    *   The backend server will typically start on `http://127.0.0.1:5000`.
+    *   The backend server will typically start on `http://127.0.0.1:5001`.
 
 2.  **Access the Frontend:**
-    *   Open your web browser and navigate to `http://127.0.0.1:5000`.
+    *   Open your web browser and navigate to `http://127.0.0.1:5001`.
     *   The application interface should load.
 
 ## 🚀 How to Use
