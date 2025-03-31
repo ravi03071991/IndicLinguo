@@ -79,8 +79,15 @@ Meet Linguo — your buddy for learning Indian languages through conversational 
 6.  **Quick Demo:** Use the "Quick Demo" button for a pre-filled example conversation.
 7.  **Theme:** Use the toggle switch in the top-right corner to switch between light and dark modes.
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-*   **Backend:** Python, Flask, MistralAI API, SarvamAI API (Translation, Transliteration, TTS)
-*   **Frontend:** HTML, CSS, JavaScript
 *   **AI Models:** Mistral Large (via API), Sarvam AI Models (via API)
+*   **Backend:** Python, Flask, MistralAI API (LLMs), SarvamAI API (Translation, Transliteration, TTS)
+*   **Frontend:** HTML, CSS, JavaScript
+
+## 👤 Author & Connect
+
+**Ravi Theja**
+- [GitHub](https://github.com/ravi03071991/IndicLinguo)
+- [LinkedIn](https://www.linkedin.com/in/ravidesetty/)
+- [X/Twitter](https://x.com/ravithejads)
