@@ -16,15 +16,15 @@ Meet Linguo — your buddy for learning Indian languages through conversational 
 
 *   **Python 3.8+**
 *   **pip** (Python package installer)
-*   **MistralAI API Key:** Get one from [Mistral AI](https://mistral.ai/).
-*   **SarvamAI API Key:** Get one from [Sarvam AI](https://sarvam.ai/).
+*   **MistralAI API Key:** Get one from [Mistral AI](https://console.mistral.ai/api-keys).
+*   **SarvamAI API Key:** Get one from [Sarvam AI](https://dashboard.sarvam.ai/admin).
 
 ## ⚙️ Setup
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your-repo-url> # Replace <your-repo-url> with the actual URL
-    cd indic_learning
+    git clone http://github.com/ravi03071991/IndicLinguo
+    cd IndicLinguo
     ```
 
 2.  **Backend Setup:**
@@ -74,11 +74,10 @@ Meet Linguo — your buddy for learning Indian languages through conversational 
 4.  **Interact:** Type your messages in English in the input box at the bottom and press Enter or click the Send button.
 5.  **View Response:** The AI's response will appear, along with:
     *   **Translation:** The AI's response translated into your selected language.
-    *   **Transliteration:** The translated response written using English script.
-    *   **Audio:** An audio player to hear the pronunciation of the translation.
-6.  **Continue:** Keep the conversation going by typing more messages.
-7.  **Quick Demo:** Use the "Quick Demo" button for a pre-filled example conversation.
-8.  **Theme:** Use the toggle switch in the top-right corner to switch between light and dark modes.
+    *   **Transliteration:** The transliterated response into your selected language.
+    *   **Audio:** An audio version to hear the pronunciation of the translation.
+6.  **Quick Demo:** Use the "Quick Demo" button for a pre-filled example conversation.
+7.  **Theme:** Use the toggle switch in the top-right corner to switch between light and dark modes.
 
 ## 🛠️ Technologies Used
 
