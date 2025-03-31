@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indic Duolingo</title>
+    <title>IndicLinguo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,18 +16,18 @@
         
         <!-- Dark Mode Toggle Switch (positioned absolutely) -->
         <div class="theme-switch-wrapper">
+            <span class="theme-icon light-icon">☀️</span> <!-- Sun icon -->
             <label class="theme-switch" for="theme-checkbox">
                 <input type="checkbox" id="theme-checkbox" />
                 <div class="slider round"></div>
             </label>
+            <span class="theme-icon dark-icon">🌙</span> <!-- Moon icon -->
         </div>
 
         <div class="title-wrapper">
-            <span class="flag-icon">🇮🇳</span>
-            <h1>Indic Duolingo</h1>
-            <span class="flag-icon">🇮🇳</span>
+            <h1>IndicLinguo</h1>
         </div>
-        <p class="subtitle">A Language Learning Application powered by MistralAI and SarvamAI</p>
+        <p class="subtitle">Your buddy for Indian languages powered by MistralAI and SarvamAI</p>
 
         <div class="settings-panel">
              <div class="settings">
@@ -72,6 +72,9 @@
             <input type="text" id="user-input" placeholder="Type your message..." disabled>
             <button id="send-button" disabled>
                 <i class="fas fa-paper-plane"></i>
+            </button>
+            <button id="reset-button" title="Reset Conversation" style="display: none;" disabled>
+                <i class="fas fa-sync-alt"></i>
             </button>
         </div>
     </div>

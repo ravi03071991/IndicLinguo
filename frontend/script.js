@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scenarioSelect = document.getElementById('scenario-select');
     const startButton = document.getElementById('start-button');
     const quickDemoButton = document.getElementById('quick-demo-button');
+    const resetButton = document.getElementById('reset-button');
     const chatbox = document.getElementById('chatbox');
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
@@ -52,7 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
         quickDemoButton.disabled = true;
         userInput.disabled = false;
         sendButton.disabled = false;
+        resetButton.disabled = false;
         userInput.focus();
+
+        resetButton.style.display = 'inline-block';
 
         chatbox.innerHTML = '';
 
@@ -65,6 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             sendMessage();
         }
     });
+
+    resetButton.addEventListener('click', resetConversation);
 
     // --- Functions ---
 
@@ -195,6 +201,32 @@ document.addEventListener('DOMContentLoaded', () => {
             sendButton.disabled = false;
             userInput.focus();
         }
+    }
+
+    // Function to reset the conversation state
+    function resetConversation() {
+        conversationHistory = [];
+        chatbox.innerHTML = '';
+
+        addMessageToChatbox('System', 'Select language & scenario, or try the Quick Demo.');
+
+        userInput.disabled = true;
+        sendButton.disabled = true;
+        resetButton.disabled = true;
+        userInput.value = '';
+
+        languageSelect.disabled = false;
+        scenarioSelect.disabled = false;
+        startButton.disabled = false;
+        quickDemoButton.disabled = false;
+
+        resetButton.style.display = 'none';
+
+        languageSelect.value = '';
+        scenarioSelect.value = '';
+        currentLanguage = '';
+        currentLanguageName = '';
+        currentScenario = '';
     }
 
     // --- Dark Mode Logic ---
