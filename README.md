@@ -2,6 +2,8 @@
 
 Meet Linguo — your buddy for learning Indian languages through conversational practice, powered by MistralAI and SarvamAI.
 
+**🚀 Live Demo: [https://www.indiclinguo.com/](https://www.indiclinguo.com/) 🚀**
+
 > **Note:** Currently supports practice in 10 Indian languages: Hindi, Bengali, Gujarati, Kannada, Malayalam, Marathi, Odia, Punjabi, Tamil, and Telugu.
 
 ## ✨ Features
