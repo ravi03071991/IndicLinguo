@@ -160,6 +160,27 @@ body {
     justify-content: center; /* Center the switch horizontally */
 }
 
+/* Social Links Styles */
+.social-links {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.2em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--link-color);
+    transform: translateY(-2px);
+}
+
 /* Style for the theme icons */
 .theme-icon {
     font-size: 1.3em; /* Adjust size as needed */
@@ -693,12 +714,10 @@ audio {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 25px 20px;
-        height: calc(100vh - 20px);
+        padding: 30px;
     }
     .background-char {
-        font-size: 20em;
-        top: 0; left: -20px;
+        font-size: 10em;
     }
      h1 { font-size: 2.2em; }
      .subtitle { font-size: 1em; margin-bottom: 20px; }
@@ -709,15 +728,16 @@ audio {
      #send-button { width: 42px; height: 42px; font-size: 1em; }
      #user-input { padding: 10px 12px; }
      .response-block { max-width: 80%; }
+     .social-links { top: 15px; left: 20px; }
+     .social-links a { font-size: 1.15em; }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 20px 15px;
+        padding: 20px;
     }
     .background-char {
-        font-size: 15em;
-        top: 10px; left: -10px;
+        font-size: 8em;
     }
     .theme-switch-wrapper { top: 15px; right: 15px; }
      h1 { font-size: 1.8em; }
@@ -732,4 +752,6 @@ audio {
      .response-block strong { font-size: 0.95em; }
      .response-block p { font-size: 0.95em; line-height: 1.5; }
      .ai-response .message-section > strong { font-size: 0.85em; }
+     .social-links { top: 12px; left: 15px; gap: 10px; }
+     .social-links a { font-size: 1.05em; }
 } 
