@@ -148,16 +148,15 @@ body {
 /* Theme Switch (Adjust positioning slightly) */
 .theme-switch-wrapper {
     position: absolute;
-    top: 20px; 
-    right: 25px; 
-    z-index: 10; /* Above background char */
-    display: flex; /* Still use flex to center switch vertically */
-    align-items: center; /* Center items vertically */
-    /* gap: 8px; */ /* Remove gap */
-    /* Add padding to contain the absolute positioned icons */
-    padding: 0 24px; /* Adjust padding as needed (approx icon width) */
-    height: 26px; /* Match switch height for alignment */
-    justify-content: center; /* Center the switch horizontally */
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Add gap between items */
+    background-color: var(--settings-bg);
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Social Links Styles */
@@ -183,12 +182,8 @@ body {
 
 /* Style for the theme icons */
 .theme-icon {
-    font-size: 1.3em; /* Adjust size as needed */
-    line-height: 1;
-    user-select: none; /* Prevent selecting the emoji */
-    position: absolute; /* Position relative to wrapper */
-    top: 50%;
-    transform: translateY(-50%); /* Center vertically */
+    font-size: 1.2em;
+    cursor: default;
 }
 
 .light-icon {
@@ -219,8 +214,8 @@ html[data-theme="dark"] .theme-switch-wrapper .dark-icon {
 .theme-switch {
     position: relative;
     display: inline-block;
-    width: 50px; /* Width of the switch */
-    height: 26px; /* Height of the switch */
+    width: 40px; /* Reduced width */
+    height: 20px; /* Reduced height */
 }
 
 .theme-switch input {
@@ -243,10 +238,10 @@ html[data-theme="dark"] .theme-switch-wrapper .dark-icon {
 .slider:before {
     position: absolute;
     content: "";
-    height: 18px;
-    width: 18px;
-    left: 4px;
-    bottom: 4px;
+    height: 14px; /* Reduced height */
+    width: 14px; /* Reduced width */
+    left: 3px; /* Adjusted left position */
+    bottom: 3px; /* Adjusted bottom position */
     background-color: white;
     transition: .4s;
 }
@@ -260,11 +255,11 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(24px);
+    transform: translateX(20px); /* Reduced translation */
 }
 
 .slider.round {
-    border-radius: 26px;
+    border-radius: 20px; /* Adjusted for new height */
 }
 
 .slider.round:before {
@@ -642,19 +637,13 @@ option {
 
 .system-message {
     background-color: var(--bg-system-msg);
-    border: 1px solid var(--border-system-msg);
     color: var(--text-system-msg);
-    font-style: normal; /* Less italic */
+    border: 1px solid var(--border-system-msg);
+    align-self: center; /* Keep centered */
     text-align: center;
-    max-width: 95%;
-    align-self: center;
-    border-radius: var(--border-radius-small);
-    padding: 10px 15px;
+    font-style: italic;
     font-size: 0.9em;
-    box-shadow: 0 2px 5px var(--shadow-color-light);
-    transform: scale(1); /* No scale animation */
-    opacity: 0; /* Still fade in */
-    animation: messageFadeIn 0.4s ease forwards;
+    max-width: 90%; /* Increase max-width */
 }
 
 .thinking {
@@ -754,4 +743,23 @@ audio {
      .ai-response .message-section > strong { font-size: 0.85em; }
      .social-links { top: 12px; left: 15px; gap: 10px; }
      .social-links a { font-size: 1.05em; }
+}
+
+/* How To Use Link - Positioned Separately */
+.howto-link {
+    position: absolute;
+    top: 22px; /* Align roughly with social icons */
+    right: 120px; /* Increased distance from right edge */
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.howto-link:hover {
+    color: var(--link-hover);
+    background-color: var(--bg-secondary); /* Subtle hover background */
 } 

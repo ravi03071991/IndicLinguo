@@ -70,6 +70,11 @@ def send_static(path):
     """Serves static files (CSS, JS, images) from the frontend folder."""
     return send_from_directory(app.static_folder, path)
 
+@app.route('/howto')
+def howto():
+    """Serves the How To Use page."""
+    return send_from_directory(app.static_folder, 'howto.html')
+
 @app.route('/api/converse', methods=['POST'])
 def converse():
     """Handles the user's message and returns AI response with translation, etc."""

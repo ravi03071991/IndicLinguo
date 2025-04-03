@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         chatbox.innerHTML = '';
 
-        addMessageToChatbox('System', `Starting conversation in ${currentScenario} scenario to help you learn ${currentLanguageName}. Happy Learning! Type your first message.`);
+        addMessageToChatbox('System', `Type your first message in English to begin practicing ${currentLanguageName}.`);
     }
 
     sendButton.addEventListener('click', sendMessage);
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             messageElement = document.createElement('div');
             messageElement.classList.add('response-block', 'system-message');
-            messageElement.innerHTML = `<p>${data}</p>`;
+            messageElement.innerHTML = data;
         }
 
         chatbox.appendChild(messageElement);

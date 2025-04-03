@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - IndicLinguo</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to existing stylesheet for variables -->
+    <style>
+        /* Basic body reset and theme variables */
+        body {
+            font-family: 'Poppins', sans-serif; /* Match main app font */
+            line-height: 1.4; /* Reduced line height */
+            padding: 10px;
+            /* padding-top: 50px; */ /* Remove body top padding */
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            margin: 0;
+            overflow-y: auto; /* Ensure vertical scrollbar appears when needed */
+        }
+
+        /* New container to handle centering */
+        .page-container {
+            max-width: 960px;
+            margin: 15px auto 30px auto; /* Center the whole page content, add bottom margin */
+            position: relative; /* Needed if we position the top link relative to this */
+        }
+
+        /* Wrapper for main content - No centering needed now */
+        .content-wrapper {
+            /* max-width: 960px; */ /* Removed */
+            /* margin: 10px auto 15px auto; */ /* Removed */
+            margin: 0; /* Reset margin */
+            padding: 15px 25px 15px 25px;
+            background-color: var(--settings-bg); /* Use settings panel background */
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            box-shadow: var(--panel-shadow);
+        }
+
+        h1, h2 {
+            color: var(--heading-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 3px; /* Minimal padding */
+            margin-top: 0;
+            margin-bottom: 1px; /* Almost no margin */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px; /* Reduced */
+            padding-bottom: 5px; /* Keep H1 padding slightly larger */
+        }
+
+        h2 {
+             margin-top: 0; /* Remove top margin as step has padding */
+             padding: 8px 0 8px 12px; /* Adjust padding - remove right */
+             /* background-color: var(--background-secondary); */ /* Remove background */
+             border-left: 4px solid var(--link-color); /* Keep accent border */
+             border-bottom: none; /* Remove the h2 bottom border */
+             margin-bottom: 8px; /* Space below heading */
+             border-radius: 0; /* Remove radius */
+        }
+
+        p {
+            margin-top: 2px;
+            margin-bottom: 8px;
+            padding-left: 16px; /* Keep indentation (4px border + 12px padding) */
+            color: var(--text-primary); /* Use primary text color */
+        }
+        p em { /* Style italic text (tips) */
+            color: var(--text-secondary);
+            display: block; /* Make tip its own line */
+            margin-top: 5px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .step {
+            margin-bottom: 8px; /* Reduced space between steps */
+            padding: 15px 20px; /* Add padding to the step */
+            background-color: var(--background-secondary); /* Apply background here */
+            border-radius: 6px; /* Add slight rounding */
+            /* border-bottom: 1px solid var(--border-color); */ /* Remove border */
+        }
+        .step:last-of-type {
+            /* border-bottom: none; */
+            margin-bottom: 0;
+        }
+        
+        ul {
+            padding: 10px 15px 10px 35px;
+            margin-top: 5px;
+            margin-bottom: 8px;
+            /* background-color: var(--background-secondary); */ /* Remove bg, inherits from step */
+            border-radius: 5px;
+            list-style-position: outside;
+            margin-left: 16px;
+        }
+        li {
+            margin-bottom: 5px; /* Space between list items */
+            color: var(--text-primary); /* Ensure list items also use primary color */
+        }
+
+        strong {
+             font-weight: 600;
+             color: var(--heading-color);
+        }
+
+        /* Define the flashing and moving animation */
+        @keyframes move-flash-effect {
+            0% { opacity: 1; transform: translateY(-50%) translateX(0); }
+            50% { opacity: 0.6; transform: translateY(-50%) translateX(5px); } /* Move right slightly */
+            100% { opacity: 1; transform: translateY(-50%) translateX(0); }
+        }
+
+        /* Style for the Back link - Fixed Middle Left */
+        .nav-back {
+             position: fixed; /* Fix to viewport */
+             top: 50%; /* Position top edge at 50% */
+             left: 15px; /* Distance from left */
+             transform: translateY(-50%); /* Start with vertical centering */
+             z-index: 100; /* Ensure it's above */
+             margin-bottom: 0;
+             /* Remove button styles */
+             padding: 0; /* Remove padding */
+             background-color: transparent; /* No background */
+             color: var(--link-color); /* Use link color */
+             border-radius: 0;
+             text-decoration: none;
+             border: none; /* No border */
+             font-weight: 600; /* Slightly bolder */
+             font-size: 1.2em; /* Make slightly larger */
+             /* Apply new animation */
+             animation: move-flash-effect 1.8s infinite ease-in-out;
+             /* transition: ... */ /* Transition still not needed */
+        }
+        .nav-back:hover {
+            /* Adjust hover state if needed - maybe just underline? */
+            background-color: transparent;
+            border-color: transparent;
+            color: var(--link-hover);
+            text-decoration: underline;
+            animation-play-state: paused; /* Optional: Pause animation on hover */
+        }
+        
+        /* Style for the alternative top back link */
+        /* .top-nav-back { */
+        /*    display: block; /* Place on its own line */ */
+        /*    margin-bottom: 15px; /* Space below it */ */
+        /*    color: var(--link-color); */
+        /*    text-decoration: none; */
+        /*    font-weight: 500; */
+        /* } */
+        /* .top-nav-back:hover { */
+        /*     color: var(--link-hover); */
+        /*     text-decoration: underline; */
+        /* } */
+
+        /* Footer Link */
+        .footer-link {
+            text-align: center;
+            margin-top: 30px;
+            display: block;
+            font-weight: 500;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-container"> <!-- Added page container -->
+        <a href="/" class="nav-back">&larr; Back to App</a>
+        <div class="content-wrapper">
+            <h1>How to Use IndicLinguo</h1>
+
+            <p>Learning a language often becomes easier and more natural through conversation. IndicLinguo is designed to help you do just that! It allows you to practice Indian languages by engaging in realistic role-playing scenarios with an AI partner. Here's how to get started:</p>
+
+            <div class="step">
+                <h2>1. Select Language</h2>
+                <p>Choose the Indian language you want to practice from the first dropdown menu (e.g., Hindi, Telugu, Tamil).</p>
+            </div>
+
+            <div class="step">
+                <h2>2. Select Scenario</h2>
+                <p>Pick a conversational scenario from the second dropdown menu. This sets the context for your practice (e.g., ordering at a Restaurant, checking into a Hotel, or just General conversation).</p>
+            </div>
+
+            <div class="step">
+                <h2>3. Start Conversation</h2>
+                <p>Click the <strong>Start Conversation</strong> button. The chat area will activate.</p>
+                <p><em>Tip: You can also use the <strong>Quick Demo</strong> button to see an example conversation in Hindi.</em></p>
+            </div>
+
+            <div class="step">
+                <h2>4. Interact with the AI</h2>
+                <p>Type your messages in <strong>English</strong> in the input box at the bottom of the chat.</p>
+                <p>Press Enter or click the Send button (looks like a paper plane <i class="fas fa-paper-plane"></i>).</p>
+            </div>
+
+            <div class="step">
+                <h2>5. Understand the Response</h2>
+                <p>The AI's response will appear in the chat. You'll see several parts:</p>
+                <ul>
+                    <li><strong>AI Response (English):</strong> The AI's direct reply in English.</li>
+                    <li><strong>Translation:</strong> The AI's response translated into your chosen Indian language script.</li>
+                    <li><strong>Transliteration:</strong> The translation written using Roman (English) letters, helping you pronounce it.</li>
+                    <li><strong>Audio:</strong> Click the play button (<i class="fas fa-play"></i>) to hear the pronunciation of the translated response.</li>
+                </ul>
+            </div>
+
+             <div class="step">
+                <h2>6. Continue the Conversation</h2>
+                <p>Keep chatting! Respond to the AI in English. The AI will remember the context of the conversation within the current session.</p>
+            </div>
+
+            <div class="step">
+                <h2>7. Reset</h2>
+                <p>Click the <strong>Reset</strong> button (<i class="fas fa-sync-alt"></i>) at any time to clear the chat and start over by selecting a new language or scenario.</p>
+            </div>
+
+            <hr style="border: none; border-top: 1px solid var(--border-color); margin-top: 30px;">
+            <p style="text-align: center; margin-top: 20px;">Happy Learning!</p>
+            
+        </div> 
+    </div> <!-- Closed page container -->
+
+</body>
+</html> 
